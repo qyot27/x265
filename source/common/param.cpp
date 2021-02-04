@@ -1337,6 +1337,7 @@ int x265_param_parse(x265_param* p, const char* name, const char* value)
                 p->logfLevel = parseName(value, logLevelNames, bError) - 1;
             }
         }
+        OPT("progress-file") p->pgfn = strdup(value);
         OPT("stylish") p->bStylish = atobool(value);
         OPT("csv") p->csvfn = strdup(value);
         OPT("csv-log-level") p->csvLogLevel = atoi(value);
@@ -2962,6 +2963,7 @@ void x265_copy_params(x265_param* dst, x265_param* src)
 
     dst->logfn = src->logfn;
     dst->logfLevel = src->logfLevel;
+    dst->pgfn = src->pgfn;
     dst->opts = src->opts;
 
     if (src->videoSignalTypePreset) dst->videoSignalTypePreset = strdup(src->videoSignalTypePreset);
