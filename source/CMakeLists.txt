@@ -847,7 +847,7 @@ endif(MSVC)
 option(ENABLE_LSMASH "Enable L-SMASH muxer" OFF)
 if(ENABLE_LSMASH)
     add_definitions(-DENABLE_LSMASH)
-    list(APPEND PLATFORM_LIBS lsmash)
+    list(APPEND PLATFORM_LIBS lsmash obuparse)
 endif(ENABLE_LSMASH)
 
 option(ENABLE_MKV "Enable Haali Matroska muxer" OFF)
