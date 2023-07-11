@@ -1,0 +1,16 @@
+--- source/output/output.cpp
++++ source/output/output.cpp
+@@ -36,9 +36,11 @@ ReconFile* ReconFile::open(const char *fname, int width, int height, uint32_t bi
+     const char * s = strrchr(fname, '.');
+ 
+     if (s && !strcmp(s, ".y4m"))
++//    {
+         return new Y4MOutput(fname, width, height, fpsNum, fpsDenom, csp);
+-    else
+-        return new YUVOutput(fname, width, height, bitdepth, csp);
++//    } else {
++//        return new YUVOutput(fname, width, height, bitdepth, csp);
++//    }
+ }
+ #ifdef ENABLE_LSMASH
+   #include "mp4.h"
