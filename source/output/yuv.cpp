@@ -21,6 +21,7 @@
  * For more information, contact us at license @ x265.com.
  *****************************************************************************/
 
+#if 0
 #include "common.h"
 #include "output.h"
 #include "yuv.h"
@@ -103,3 +104,4 @@ bool YUVOutput::writePicture(const x265_picture& pic)
 
     return true;
 }
+#endif // 0
